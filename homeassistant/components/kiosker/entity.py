@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 from homeassistant.helpers.device_registry import DeviceInfo
-from homeassistant.helpers.entity import EntityDescription
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
 from .const import DOMAIN
@@ -15,39 +14,74 @@ class KioskerEntity(CoordinatorEntity[KioskerDataUpdateCoordinator]):
 
     _attr_has_entity_name = True
 
-    def __init__(
-        self,
-        coordinator: KioskerDataUpdateCoordinator,
-        description: EntityDescription,
-    ) -> None:
+    def __init__(self, coordinator: KioskerDataUpdateCoordinator) -> None:
         """Initialize the entity."""
         super().__init__(coordinator)
 
-        self.entity_description = description
+        # Get device info with fallbacks for translation detection
+        device_id = self._get_device_id()
+        model = self._get_model()
+        hw_version = self._get_hw_version()
+        sw_version = self._get_sw_version()
+        app_name = self._get_app_name()
 
-        status = coordinator.data.status
-        device_id = status.device_id
-        model = status.model
-        app_name = status.app_name
-        app_version = status.app_version
-        os_version = status.os_version
-
-        # Use uppercased truncated device ID for display purposes (device name, titles)
-        device_id_short_display = device_id[:8].upper()
-
-        # Set device info
+        # Ensure device info is always created, even without coordinator data
         self._attr_device_info = DeviceInfo(
             identifiers={(DOMAIN, device_id)},
-            name=(f"Kiosker {device_id_short_display}"),
-            sw_version=(f"{app_name} {app_version}"),
-            hw_version=(
-                None
-                if model is None
-                else model
-                if os_version is None
-                else f"{model} ({os_version})"
-            ),
+            name=f"Kiosker {device_id[:8]}" if device_id != "unknown" else "Kiosker",
+            manufacturer="Top North",
+            model=app_name,
+            sw_version=sw_version,
+            hw_version=f"{model} ({hw_version})",
             serial_number=device_id,
         )
 
-        self._attr_unique_id = f"{device_id}_{description.key}"
+    def _get_device_id(self) -> str:
+        """Get device ID from coordinator data."""
+        if (
+            self.coordinator.data
+            and "status" in self.coordinator.data
+            and hasattr(self.coordinator.data["status"], "device_id")
+        ):
+            return self.coordinator.data["status"].device_id
+        return "unknown"
+
+    def _get_app_name(self) -> str:
+        """Get app name from coordinator data."""
+        if (
+            self.coordinator.data
+            and "status" in self.coordinator.data
+            and hasattr(self.coordinator.data["status"], "app_name")
+        ):
+            return self.coordinator.data["status"].app_name
+        return "Unknown"
+
+    def _get_model(self) -> str:
+        """Get model from coordinator data."""
+        if (
+            self.coordinator.data
+            and "status" in self.coordinator.data
+            and hasattr(self.coordinator.data["status"], "model")
+        ):
+            return self.coordinator.data["status"].model
+        return "Unknown"
+
+    def _get_sw_version(self) -> str:
+        """Get software version from coordinator data."""
+        if (
+            self.coordinator.data
+            and "status" in self.coordinator.data
+            and hasattr(self.coordinator.data["status"], "app_version")
+        ):
+            return self.coordinator.data["status"].app_version
+        return "Unknown"
+
+    def _get_hw_version(self) -> str:
+        """Get software version from coordinator data."""
+        if (
+            self.coordinator.data
+            and "status" in self.coordinator.data
+            and hasattr(self.coordinator.data["status"], "os_version")
+        ):
+            return self.coordinator.data["status"].os_version
+        return "Unknown"

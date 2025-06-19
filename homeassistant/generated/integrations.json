@@ -381,7 +381,7 @@
       "iot_class": "local_push"
     },
     "anthropic": {
-      "name": "Anthropic",
+      "name": "Anthropic Conversation",
       "integration_type": "service",
       "config_flow": true,
       "iot_class": "cloud_polling"
@@ -458,7 +458,7 @@
           "name": "Apple iTunes"
         },
         "weatherkit": {
-          "integration_type": "service",
+          "integration_type": "hub",
           "config_flow": true,
           "iot_class": "cloud_polling",
           "name": "Apple WeatherKit"
@@ -617,7 +617,7 @@
           "name": "August"
         },
         "yalexs_ble": {
-          "integration_type": "device",
+          "integration_type": "hub",
           "config_flow": true,
           "iot_class": "local_push",
           "name": "Yale Access Bluetooth"
@@ -643,12 +643,6 @@
     },
     "autarco": {
       "name": "Autarco",
-      "integration_type": "hub",
-      "config_flow": true,
-      "iot_class": "cloud_polling"
-    },
-    "autoskope": {
-      "name": "Autoskope",
       "integration_type": "hub",
       "config_flow": true,
       "iot_class": "cloud_polling"
@@ -736,12 +730,6 @@
       "config_flow": false,
       "iot_class": "local_polling"
     },
-    "bega": {
-      "name": "BEGA",
-      "iot_standards": [
-        "zigbee"
-      ]
-    },
     "bge": {
       "name": "Baltimore Gas and Electric (BGE)",
       "integration_type": "virtual",
@@ -828,6 +816,12 @@
       "integration_type": "hub",
       "config_flow": false,
       "iot_class": "local_push"
+    },
+    "bmw_connected_drive": {
+      "name": "BMW Connected Drive",
+      "integration_type": "hub",
+      "config_flow": true,
+      "iot_class": "cloud_polling"
     },
     "bond": {
       "name": "Bond",
@@ -979,12 +973,6 @@
       "iot_class": "cloud_polling",
       "single_config_entry": true
     },
-    "casper_glow": {
-      "name": "Casper Glow",
-      "integration_type": "device",
-      "config_flow": true,
-      "iot_class": "local_polling"
-    },
     "ccm15": {
       "name": "Midea ccm15 AC Controller",
       "integration_type": "hub",
@@ -1007,12 +995,6 @@
       "integration_type": "hub",
       "config_flow": false,
       "iot_class": "local_polling"
-    },
-    "chess_com": {
-      "name": "Chess.com",
-      "integration_type": "service",
-      "config_flow": true,
-      "iot_class": "cloud_polling"
     },
     "cisco": {
       "name": "Cisco",
@@ -1323,12 +1305,6 @@
           "iot_class": "local_push",
           "name": "Denon AVR Network Receivers"
         },
-        "denon_rs232": {
-          "integration_type": "hub",
-          "config_flow": true,
-          "iot_class": "local_push",
-          "name": "Denon RS232"
-        },
         "heos": {
           "integration_type": "hub",
           "config_flow": true,
@@ -1491,12 +1467,6 @@
       "config_flow": true,
       "iot_class": "local_push"
     },
-    "dropbox": {
-      "name": "Dropbox",
-      "integration_type": "service",
-      "config_flow": true,
-      "iot_class": "cloud_polling"
-    },
     "droplet": {
       "name": "Droplet",
       "integration_type": "device",
@@ -1527,11 +1497,11 @@
       "config_flow": true,
       "iot_class": "cloud_polling"
     },
-    "duco": {
-      "name": "Duco",
-      "integration_type": "hub",
+    "duke_energy": {
+      "name": "Duke Energy",
+      "integration_type": "service",
       "config_flow": true,
-      "iot_class": "local_polling"
+      "iot_class": "cloud_polling"
     },
     "dunehd": {
       "name": "Dune HD",
@@ -1562,12 +1532,6 @@
       "integration_type": "service",
       "config_flow": true,
       "iot_class": "cloud_polling"
-    },
-    "earn_e_p1": {
-      "name": "EARN-E P1 Meter",
-      "integration_type": "device",
-      "config_flow": true,
-      "iot_class": "local_push"
     },
     "eastron": {
       "name": "Eastron",
@@ -1937,12 +1901,6 @@
         }
       }
     },
-    "eurotronic_cometblue": {
-      "name": "Eurotronic Comet Blue",
-      "integration_type": "device",
-      "config_flow": true,
-      "iot_class": "local_polling"
-    },
     "eve": {
       "name": "Eve",
       "iot_standards": [
@@ -2252,12 +2210,6 @@
     },
     "freedompro": {
       "name": "Freedompro",
-      "integration_type": "hub",
-      "config_flow": true,
-      "iot_class": "cloud_polling"
-    },
-    "freshr": {
-      "name": "Fresh-r",
       "integration_type": "hub",
       "config_flow": true,
       "iot_class": "cloud_polling"
@@ -2984,12 +2936,6 @@
       "config_flow": false,
       "iot_class": "local_polling"
     },
-    "hr_energy_qube": {
-      "name": "Qube heat pump",
-      "integration_type": "hub",
-      "config_flow": true,
-      "iot_class": "local_polling"
-    },
     "html5": {
       "name": "HTML5 Push Notifications",
       "integration_type": "hub",
@@ -3481,7 +3427,7 @@
     },
     "kiosker": {
       "name": "Kiosker",
-      "integration_type": "device",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_polling"
     },
@@ -3682,7 +3628,7 @@
       "integrations": {
         "decora_wifi": {
           "integration_type": "hub",
-          "config_flow": true,
+          "config_flow": false,
           "iot_class": "cloud_polling",
           "name": "Leviton Decora Wi-Fi"
         }
@@ -3699,12 +3645,6 @@
     "lg": {
       "name": "LG",
       "integrations": {
-        "lg_infrared": {
-          "integration_type": "device",
-          "config_flow": true,
-          "iot_class": "assumed_state",
-          "name": "LG Infrared"
-        },
         "lg_netcast": {
           "integration_type": "device",
           "config_flow": true,
@@ -3736,12 +3676,6 @@
       "integration_type": "device",
       "config_flow": true,
       "iot_class": "local_polling"
-    },
-    "lichess": {
-      "name": "Lichess",
-      "integration_type": "service",
-      "config_flow": true,
-      "iot_class": "cloud_polling"
     },
     "lidarr": {
       "name": "Lidarr",
@@ -3893,12 +3827,6 @@
           "name": "Squeezebox (Lyrion Music Server)"
         }
       }
-    },
-    "lojack": {
-      "name": "LoJack",
-      "integration_type": "hub",
-      "config_flow": true,
-      "iot_class": "cloud_polling"
     },
     "london_air": {
       "name": "London Air",
@@ -4284,6 +4212,11 @@
       "integration_type": "service",
       "config_flow": true,
       "iot_class": "local_polling"
+    },
+    "mini_connected": {
+      "name": "MINI Connected",
+      "integration_type": "virtual",
+      "supported_by": "bmw_connected_drive"
     },
     "minio": {
       "name": "Minio",
@@ -4948,12 +4881,6 @@
       "config_flow": false,
       "iot_class": "cloud_push"
     },
-    "opendisplay": {
-      "name": "OpenDisplay",
-      "integration_type": "device",
-      "config_flow": true,
-      "iot_class": "local_push"
-    },
     "openerz": {
       "name": "Open ERZ",
       "integration_type": "hub",
@@ -5080,8 +5007,8 @@
     },
     "orvibo": {
       "name": "Orvibo",
-      "integration_type": "device",
-      "config_flow": true,
+      "integration_type": "hub",
+      "config_flow": false,
       "iot_class": "local_push"
     },
     "osoenergy": {
@@ -5121,7 +5048,7 @@
       "iot_class": "local_polling"
     },
     "overseerr": {
-      "name": "Seerr",
+      "name": "Overseerr",
       "integration_type": "service",
       "config_flow": true,
       "iot_class": "local_push"
@@ -5274,8 +5201,8 @@
     },
     "picotts": {
       "name": "Pico TTS",
-      "integration_type": "service",
-      "config_flow": true,
+      "integration_type": "hub",
+      "config_flow": false,
       "iot_class": "local_push"
     },
     "pilight": {
@@ -5313,8 +5240,8 @@
     },
     "pjlink": {
       "name": "PJLink",
-      "integration_type": "device",
-      "config_flow": true,
+      "integration_type": "hub",
+      "config_flow": false,
       "iot_class": "local_polling"
     },
     "plaato": {
@@ -5918,7 +5845,7 @@
       "integrations": {
         "touchline": {
           "integration_type": "hub",
-          "config_flow": true,
+          "config_flow": false,
           "iot_class": "local_polling",
           "name": "Roth Touchline"
         },
@@ -6523,12 +6450,6 @@
       "config_flow": true,
       "iot_class": "local_polling"
     },
-    "solarman": {
-      "name": "Solarman",
-      "integration_type": "device",
-      "config_flow": true,
-      "iot_class": "local_polling"
-    },
     "solax": {
       "name": "SolaX Power",
       "integration_type": "device",
@@ -6967,12 +6888,6 @@
         }
       }
     },
-    "teleinfo": {
-      "name": "Teleinfo",
-      "integration_type": "device",
-      "config_flow": true,
-      "iot_class": "local_polling"
-    },
     "telldus": {
       "name": "Telldus",
       "integrations": {
@@ -7042,6 +6957,12 @@
       "integration_type": "hub",
       "config_flow": true,
       "iot_class": "cloud_polling"
+    },
+    "tfiac": {
+      "name": "Tfiac",
+      "integration_type": "hub",
+      "config_flow": false,
+      "iot_class": "local_polling"
     },
     "thermador": {
       "name": "Thermador",
@@ -7328,12 +7249,6 @@
       "config_flow": true,
       "iot_class": "cloud_polling"
     },
-    "trmnl": {
-      "name": "TRMNL",
-      "integration_type": "hub",
-      "config_flow": true,
-      "iot_class": "cloud_polling"
-    },
     "tuya": {
       "name": "Tuya",
       "integration_type": "hub",
@@ -7415,12 +7330,6 @@
           "iot_class": "local_push",
           "name": "UniFi Network"
         },
-        "unifi_access": {
-          "integration_type": "hub",
-          "config_flow": true,
-          "iot_class": "local_push",
-          "name": "UniFi Access"
-        },
         "unifi_direct": {
           "integration_type": "hub",
           "config_flow": false,
@@ -7440,12 +7349,6 @@
           "name": "UniFi Protect"
         }
       }
-    },
-    "ubisys": {
-      "name": "Ubisys",
-      "iot_standards": [
-        "zigbee"
-      ]
     },
     "ubiwizz": {
       "name": "Ubiwizz",
@@ -7635,12 +7538,6 @@
     "victron": {
       "name": "Victron",
       "integrations": {
-        "victron_gx": {
-          "integration_type": "hub",
-          "config_flow": true,
-          "iot_class": "local_push",
-          "name": "Victron GX"
-        },
         "victron_ble": {
           "integration_type": "device",
           "config_flow": true,
@@ -7764,7 +7661,7 @@
     },
     "watergate": {
       "name": "Watergate",
-      "integration_type": "device",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_push"
     },
@@ -7787,7 +7684,7 @@
       "iot_class": "cloud_polling"
     },
     "waze_travel_time": {
-      "integration_type": "service",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "cloud_polling"
     },
@@ -7855,12 +7752,6 @@
       "config_flow": true,
       "iot_class": "local_push"
     },
-    "wiim": {
-      "name": "WiiM",
-      "integration_type": "hub",
-      "config_flow": true,
-      "iot_class": "local_push"
-    },
     "wilight": {
       "name": "WiLight",
       "integration_type": "hub",
@@ -7881,7 +7772,7 @@
     },
     "wiz": {
       "name": "WiZ",
-      "integration_type": "device",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_push"
     },
@@ -7899,7 +7790,7 @@
     },
     "wolflink": {
       "name": "Wolf SmartSet Service",
-      "integration_type": "device",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "cloud_polling"
     },
@@ -7910,7 +7801,7 @@
     },
     "worldclock": {
       "name": "Worldclock",
-      "integration_type": "service",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_push"
     },
@@ -7928,7 +7819,7 @@
     },
     "ws66i": {
       "name": "Soundavo WS66i 6-Zone Amplifier",
-      "integration_type": "device",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_polling"
     },
@@ -8013,7 +7904,7 @@
           "name": "Yale Home"
         },
         "yalexs_ble": {
-          "integration_type": "device",
+          "integration_type": "hub",
           "config_flow": true,
           "iot_class": "local_push",
           "name": "Yale Access Bluetooth"
@@ -8053,7 +7944,7 @@
           "name": "Yamaha Network Receivers"
         },
         "yamaha_musiccast": {
-          "integration_type": "device",
+          "integration_type": "hub",
           "config_flow": true,
           "iot_class": "local_push",
           "name": "MusicCast"
@@ -8079,7 +7970,7 @@
     },
     "yardian": {
       "name": "Yardian",
-      "integration_type": "device",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_polling"
     },
@@ -8087,7 +7978,7 @@
       "name": "Yeelight",
       "integrations": {
         "yeelight": {
-          "integration_type": "device",
+          "integration_type": "hub",
           "config_flow": true,
           "iot_class": "local_push",
           "name": "Yeelight"
@@ -8114,7 +8005,7 @@
     },
     "youless": {
       "name": "YouLess",
-      "integration_type": "device",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "local_polling"
     },
@@ -8126,7 +8017,7 @@
     },
     "zamg": {
       "name": "GeoSphere Austria",
-      "integration_type": "service",
+      "integration_type": "hub",
       "config_flow": true,
       "iot_class": "cloud_polling"
     },
